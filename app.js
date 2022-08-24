@@ -19,12 +19,13 @@ form.addEventListener('submit', function (e) {
 
     //check if email is exist
     let users = JSON.parse(localStorage.getItem("users")) || [];
- 
+
     let isExist = users.find((user) => user.email === email);
     if (isExist) {
         return alert('The email is used!');
     }
-console.log(isExist)
+
+    console.log(isExist)
     //add new user
     let newUser = new User(fname, lname, email, password);
     users.push(newUser);
@@ -77,7 +78,7 @@ changeThemeBtn.addEventListener("click", (e) => {
     body.style.color = body.style.color != 'white' ? 'white' : 'black';
     changeThemeBtn.textContent = changeThemeBtn.textContent != '🌞' ? '🌞' : '🌚';
 
-
+    
     const theme = {
         'backgroundColor': body.style.backgroundColor,
         'color': body.style.color,
