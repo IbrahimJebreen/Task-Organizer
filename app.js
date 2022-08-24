@@ -76,9 +76,9 @@ let Loginin=document.getElementById("Login_form");
 Loginin.style.backgroundColor = currentTheme.backgroundColor || 'white';
 Loginin.style.color = currentTheme.color || 'black';
 
-let container1=document.getElementById("container")
-container1.style.backgroundColor = currentTheme.backgroundColor || 'white';
-container1.style.color = currentTheme.color || 'black';
+let containers1=document.getElementById("containers")
+containers1.style.backgroundColor = currentTheme.backgroundColor || 'white';
+containers1.style.color = currentTheme.color || 'black';
 
 changeThemeBtn.textContent = currentTheme.btn || '🌚';
 changeThemeBtn.addEventListener("click", (e) => {
@@ -99,9 +99,9 @@ changeThemeBtn.addEventListener("click", (e) => {
     Loginin.style.color = Loginin.style.color != 'white' ? 'white' : 'black';
     // changeThemeBtn.textContent = changeThemeBtn.textContent != '🌞' ? '🌞' : '🌚';
 
-    let container1=document.getElementById("container")
-    container1.style.backgroundColor = container.style.backgroundColor != 'black' ? 'black' : 'white';
-    container1.style.color = container.style.color != 'white' ? 'white' : 'black';
+    let containers1=document.getElementById("containers")
+    containers1.style.backgroundColor = containers.style.backgroundColor != 'black' ? 'black' : 'white';
+    containers1.style.color = containers.style.color != 'white' ? 'white' : 'black';
 
     const theme = {
         'backgroundColor': body.style.backgroundColor,
@@ -116,8 +116,8 @@ changeThemeBtn.addEventListener("click", (e) => {
         'scolor': Loginin.style.color,
         'sbtn': changeThemeBtn.textContent,
 
-        'cbackgroundColor': container1.style.backgroundColor,
-        'ccolor': container1.style.color,
+        'cbackgroundColor': containers1.style.backgroundColor,
+        'ccolor': containers1.style.color,
         'cbtn': changeThemeBtn.textContent
 
 
@@ -130,12 +130,12 @@ changeThemeBtn.addEventListener("click", (e) => {
 
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
+const containers = document.getElementById('containers');
 
 signUpButton.addEventListener('click', () => {
-	container.classList.add("right-panel-active");
+	containers.classList.add("right-panel-active");
 });
 
 signInButton.addEventListener('click', () => {
-	container.classList.remove("right-panel-active");
+	containers.classList.remove("right-panel-active");
 });
