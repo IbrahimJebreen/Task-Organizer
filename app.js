@@ -69,8 +69,16 @@ const currentTheme = JSON.parse(localStorage.getItem('theme')) || {};
 let body = document.querySelector('body');
 body.style.backgroundColor = currentTheme.backgroundColor || 'white';
 body.style.color = currentTheme.color || 'black';
-changeThemeBtn.textContent = currentTheme.btn || '🌚';
 
+let Signup=document.getElementById("form");
+Signup.style.backgroundColor = currentTheme.backgroundColor || 'white';
+Signup.style.color = currentTheme.color || 'black';
+
+let Loginin=document.getElementById("Login_form");
+Loginin.style.backgroundColor = currentTheme.backgroundColor || 'white';
+Loginin.style.color = currentTheme.color || 'black';
+
+changeThemeBtn.textContent = currentTheme.btn || '🌚';
 changeThemeBtn.addEventListener("click", (e) => {
     e.preventDefault()
 
@@ -78,15 +86,39 @@ changeThemeBtn.addEventListener("click", (e) => {
     body.style.backgroundColor = body.style.backgroundColor != 'black' ? 'black' : 'white';
     body.style.color = body.style.color != 'white' ? 'white' : 'black';
     changeThemeBtn.textContent = changeThemeBtn.textContent != '🌞' ? '🌞' : '🌚';
+    
+    let Signup=document.getElementById("form");
+    Signup.style.backgroundColor = Signup.style.backgroundColor != 'black' ? 'black' : 'white';
+    Signup.style.color = Signup.style.color != 'white' ? 'white' : 'black';
+    // changeThemeBtn.textContent = changeThemeBtn.textContent != '🌞' ? '🌞' : '🌚';
+    
+    let Loginin=document.getElementById("Login_form");
+    Loginin.style.backgroundColor = Loginin.style.backgroundColor != 'black' ? 'black' : 'white';
+    Loginin.style.color = Loginin.style.color != 'white' ? 'white' : 'black';
+    // changeThemeBtn.textContent = changeThemeBtn.textContent != '🌞' ? '🌞' : '🌚';
+
 
 
     const theme = {
         'backgroundColor': body.style.backgroundColor,
         'color': body.style.color,
-        'btn': changeThemeBtn.textContent
+        'btn': changeThemeBtn.textContent,
+
+        'rbackgroundColor': Signup.style.backgroundColor,
+        'rcolor': Signup.style.color,
+        'rbtn': changeThemeBtn.textContent,
+
+        'sbackgroundColor': Loginin.style.backgroundColor,
+        'scolor': Loginin.style.color,
+        'sbtn': changeThemeBtn.textContent
+
+
     }
     localStorage.setItem('theme', JSON.stringify(theme));
 })
+
+
+
 
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
