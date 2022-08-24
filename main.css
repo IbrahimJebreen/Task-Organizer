@@ -91,8 +91,8 @@ input {
 .container {
 	background-color: #fff;
 	border-radius: 10px;
-  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-			0 10px 10px rgba(0,0,0,0.22);
+  	box-shadow: 0 14px 28px rgba(247, 14, 14, 0.999), 
+			0 10px 10px rgb(255, 9, 9);
 	position: relative;
 	overflow: hidden;
 	width: 768px;
