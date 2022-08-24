@@ -102,7 +102,6 @@ changeThemeBtn.addEventListener("click", (e) => {
     let container1=document.getElementById("container")
     container1.style.backgroundColor = container.style.backgroundColor != 'black' ? 'black' : 'white';
     container1.style.color = container.style.color != 'white' ? 'white' : 'black';
-    
 
     const theme = {
         'backgroundColor': body.style.backgroundColor,
