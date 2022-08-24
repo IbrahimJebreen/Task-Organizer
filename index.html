@@ -6,28 +6,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+	<link rel="stylesheet" href="main.css">
 </head>
 
 <body>
+    <header></header>
+    <main>
 
-    <h1>login</h1>
-    <form id="form">
-        <input type="text" placeholder="First Name" id="fname"><br>
+        <section class="Home">
 
-        <input type="text" placeholder="Last Name" id="lname"><br>
+        </section>
 
-        <input type="email" placeholder="email" id="email"><br>
-        <input type="password" placeholder="password" id="password"><br>
-        <input type="submit">
-    </form>
-    <br><br><br>
-    <form id="Login_form">
 
-        <input type="email" placeholder="email" id="login_form"><br>
-        <input type="password" placeholder="password" id="login_password"><br>
-        <input type="submit">
-    </form>
-    <button id="changeTheme">🌚</button>
+        <section class="Form">
+
+
+            
+           
+
+            <h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form id="form">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" placeholder="FName" id="fname"/>
+			<input type="text" placeholder="LName" id="lname"/>
+			
+			<input type="email" placeholder="Email" id="email"/>
+			<input type="password" placeholder="Password" id="password" />
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form  id="Login_form">
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="email" placeholder="Email" id="login_form"/>
+			<input type="password" placeholder="Password" id="login_password" />
+			<a href="#">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+            <button id="changeTheme">🌚</button>
+        </section>
+
+
+    </main>
+    <footer>
+    </footer>
+
 
     <script src="app.js"></script>
 
