@@ -19,14 +19,14 @@ form.addEventListener('submit', function (e) {
 
     //check if email is exist
     let users = JSON.parse(localStorage.getItem("users")) || [];
- 
+
     let isExist = users.find((user) => user.email === email);
     if (isExist) {
         return alert('The email is used!');
     }
-console.log(isExist)
+    console.log(isExist)
     //add new user
-    let newUser = new User(fname, lname, email, password);
+    let newUser = new User(fname,lname, email, password);
     users.push(newUser);
     localStorage.removeItem("users");
     localStorage.setItem("users", JSON.stringify(users));
@@ -56,8 +56,10 @@ loginForm.addEventListener("submit", (e) => {
 
     //save user to local storage
     localStorage.setItem("currentUser", JSON.stringify(currentUser))
-    alert("welcome " + currentUser.first_name);
-
+    console.log(currentUser.first_name);
+    // if (currentUser.password) {
+        alert("welcome " + currentUser.first_name);
+    // }
     //go to tasks page
     location.href = 'tasks.html'
 })
