@@ -76,6 +76,10 @@ let Loginin=document.getElementById("Login_form");
 Loginin.style.backgroundColor = currentTheme.backgroundColor || 'white';
 Loginin.style.color = currentTheme.color || 'black';
 
+let container1=document.getElementById("container")
+container1.style.backgroundColor = currentTheme.backgroundColor || 'white';
+container1.style.color = currentTheme.color || 'black';
+
 changeThemeBtn.textContent = currentTheme.btn || '🌚';
 changeThemeBtn.addEventListener("click", (e) => {
     e.preventDefault()
@@ -95,7 +99,10 @@ changeThemeBtn.addEventListener("click", (e) => {
     Loginin.style.color = Loginin.style.color != 'white' ? 'white' : 'black';
     // changeThemeBtn.textContent = changeThemeBtn.textContent != '🌞' ? '🌞' : '🌚';
 
-
+    let container1=document.getElementById("container")
+    container1.style.backgroundColor = container.style.backgroundColor != 'black' ? 'black' : 'white';
+    container1.style.color = container.style.color != 'white' ? 'white' : 'black';
+    
 
     const theme = {
         'backgroundColor': body.style.backgroundColor,
@@ -108,7 +115,11 @@ changeThemeBtn.addEventListener("click", (e) => {
 
         'sbackgroundColor': Loginin.style.backgroundColor,
         'scolor': Loginin.style.color,
-        'sbtn': changeThemeBtn.textContent
+        'sbtn': changeThemeBtn.textContent,
+
+        'cbackgroundColor': container1.style.backgroundColor,
+        'ccolor': container1.style.color,
+        'cbtn': changeThemeBtn.textContent
 
 
     }
