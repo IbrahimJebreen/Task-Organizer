@@ -39,13 +39,17 @@
                                 <a class="nav-link" href="#Add-Task">Add Task</a>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="#pending">Pending</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="#progress">In progress</a>
-                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Task priority 
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">Critical</a></li>
+                                  <li><a class="dropdown-item" href="#">Normal</a></li>
+                                    <li><a class="dropdown-item" href="#">Low priority</a></li>
+                                
+                                </ul>
+                              </li>
                         
                             <li class="nav-item">
                                 <a class="nav-link" href="#calender">Tasks Calender</a>
@@ -57,7 +61,64 @@
                 </div>
             </nav>
         </div>
-    
+    </header>
+
+    <!-- ========================== End Header Area============================== -->
+
+    <!-- ========================== Start add new task ============================== -->
+
+    <div id="newtask" class="section d-flex justify-content-center">
+		<div class="section-center ">
+			<div class="container">
+				<div class="row ">
+					<div class="newtask-form">
+						<form>
+							<div class="row" style="display:block;">
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Task title </span>
+										<input class="form-control" type="text" placeholder="add task title">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Task description</span>
+                                        <textarea class="form-control" rows="3"></textarea>
+									</div>
+								</div>
+							</div>
+                            
+                            <div class="form-group">
+								<div class="form-checkbox">
+									<label for="Critical">
+										<input type="radio" id="Critical" name="task-priority">
+										<span></span>Critical
+									</label>
+									<label for="Normal">
+										<input type="radio" id="Normal" name="task-priority">
+										<span></span>Normal
+									</label>
+									<label for="low-priority">
+										<input type="radio" id="low-priority" name="task-priority">
+										<span></span>Low priority
+									</label>
+								</div>
+							</div>
+                            
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-btn">
+										<button class="submit-btn">Add Task </button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <!--=================== End add new task ================-->
 
 
 
