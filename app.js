@@ -78,7 +78,7 @@ Loginin.style.color = currentTheme.color || 'black';
 
 let containers1=document.getElementById("containers")
 containers1.style.backgroundColor = currentTheme.backgroundColor || 'white';
-containers1.style.color = currentTheme.color || 'black';
+Loginin.style.color = currentTheme.color || 'black';
 
 changeThemeBtn.textContent = currentTheme.btn || '🌚';
 changeThemeBtn.addEventListener("click", (e) => {

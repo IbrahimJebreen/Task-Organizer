@@ -17,7 +17,7 @@
 	margin: -20px 0 50px;
 } */
 
-.Home>h1 {
+/* .Home>h1 {
 	font-weight: bold;
 	margin: 0;
 }
@@ -39,6 +39,11 @@
 }
 .Home>span {
 	font-size: 12px;
+} */
+
+.Home
+{
+	color: white;
 }
 
 .a {
