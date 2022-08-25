@@ -25,7 +25,9 @@ form.addEventListener('submit', function (e) {
         return alert('The email is used!');
     }
 
+
     console.log(isExist)
+
     //add new user
     let newUser = new User(fname, lname, email, password);
     users.push(newUser);
@@ -68,6 +70,20 @@ const currentTheme = JSON.parse(localStorage.getItem('theme')) || {};
 let body = document.querySelector('body');
 body.style.backgroundColor = currentTheme.backgroundColor || 'white';
 body.style.color = currentTheme.color || 'black';
+
+
+let Signup=document.getElementById("form");
+Signup.style.backgroundColor = currentTheme.backgroundColor || 'white';
+Signup.style.color = currentTheme.color || 'black';
+
+let Loginin=document.getElementById("Login_form");
+Loginin.style.backgroundColor = currentTheme.backgroundColor || 'white';
+Loginin.style.color = currentTheme.color || 'black';
+
+let containers1=document.getElementById("containers")
+containers1.style.backgroundColor = currentTheme.backgroundColor || 'white';
+Loginin.style.color = currentTheme.color || 'black';
+
 changeThemeBtn.textContent = currentTheme.btn || '🌚';
 
 changeThemeBtn.addEventListener("click", (e) => {
@@ -79,22 +95,51 @@ changeThemeBtn.addEventListener("click", (e) => {
     changeThemeBtn.textContent = changeThemeBtn.textContent != '🌞' ? '🌞' : '🌚';
 
     
+    let Signup=document.getElementById("form");
+    Signup.style.backgroundColor = Signup.style.backgroundColor != 'black' ? 'black' : 'white';
+    Signup.style.color = Signup.style.color != 'white' ? 'white' : 'black';
+    // changeThemeBtn.textContent = changeThemeBtn.textContent != '🌞' ? '🌞' : '🌚';
+    
+    let Loginin=document.getElementById("Login_form");
+    Loginin.style.backgroundColor = Loginin.style.backgroundColor != 'black' ? 'black' : 'white';
+    Loginin.style.color = Loginin.style.color != 'white' ? 'white' : 'black';
+    // changeThemeBtn.textContent = changeThemeBtn.textContent != '🌞' ? '🌞' : '🌚';
+
+    let containers1=document.getElementById("containers")
+    containers1.style.backgroundColor = containers.style.backgroundColor != 'black' ? 'black' : 'white';
+    containers1.style.color = containers.style.color != 'white' ? 'white' : 'black';
+
     const theme = {
         'backgroundColor': body.style.backgroundColor,
         'color': body.style.color,
-        'btn': changeThemeBtn.textContent
+        'btn': changeThemeBtn.textContent,
+
+        'rbackgroundColor': Signup.style.backgroundColor,
+        'rcolor': Signup.style.color,
+        'rbtn': changeThemeBtn.textContent,
+
+        'sbackgroundColor': Loginin.style.backgroundColor,
+        'scolor': Loginin.style.color,
+        'sbtn': changeThemeBtn.textContent,
+
+        'cbackgroundColor': containers1.style.backgroundColor,
+        'ccolor': containers1.style.color,
+        'cbtn': changeThemeBtn.textContent
+    
+
     }
     localStorage.setItem('theme', JSON.stringify(theme));
 })
 
+
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
+const containers = document.getElementById('containers');
 
 signUpButton.addEventListener('click', () => {
-	container.classList.add("right-panel-active");
+	containers.classList.add("right-panel-active");
 });
 
 signInButton.addEventListener('click', () => {
-	container.classList.remove("right-panel-active");
+	containers.classList.remove("right-panel-active");
 });
