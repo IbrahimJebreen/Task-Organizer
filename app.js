@@ -43,6 +43,7 @@ form.addEventListener('submit', function (e) {
     localStorage.removeItem("users");
     localStorage.setItem("users", JSON.stringify(users));
 
+
     //clear register form
     document.getElementById("fname").value = '';
     document.getElementById("lname").value = '';

@@ -214,7 +214,7 @@ genrateRowData();
 
 let logout = document.getElementById("logout");
 logout.addEventListener('click', (event) => {
-    event.preventDefault(); let logout = confirm("Are you sure?");
+     let logout = confirm("Are you sure?");
     if (logout) { location.href = 'index.html' }
     else { location.href = 'tasks.html' }
 })
