@@ -1,4 +1,3 @@
-
 //  ======================== Don't delete this please 4 -7 =========================
 
 // if(!localStorage.getItem('currentUser')){
@@ -14,7 +13,7 @@ const log = console.log;
 let allTasks = [];
 
 
-// This must be to check if the array is empty or not and get the old items 
+// This must be to check if the array is empty or not and get the old way of calling items to the row/// items 
 if (getDataFromLocal()) {
 
     allTasks = getDataFromLocal();
@@ -22,12 +21,12 @@ if (getDataFromLocal()) {
 
 
 // ===================This constructor is for the login and signup form
-function userTasks(title, description, priority) {
-
+function userTasks(title, description, priority,userID) {
     this.title = title
     this.description = description
     this.priority = priority
-}
+    this.userID=userID
+} 
 
 // ========================= This is the event listener 
 form.addEventListener("submit", TaskCreator);
@@ -37,15 +36,17 @@ form.addEventListener("submit", TaskCreator);
 // ========================== This is the task creator function and save to local 
 function TaskCreator(event) {
 
-    // debugger
+    
 
     event.preventDefault();
 
     let taskTitle = event.target.title.value;
     let taskDescription = event.target.description.value;
     let taskPriority = event.target.priority.value;
+    let userID=JSON.parse(localStorage.getItem("currentUser")).userID;
 
-    let newTask = new userTasks(taskTitle, taskDescription, taskPriority);
+
+    let newTask = new userTasks(taskTitle, taskDescription, taskPriority,userID);
 
     allTasks.push(newTask);
 
@@ -64,7 +65,7 @@ function TaskCreator(event) {
 }
 
 // ========================== getting the data from local 
-function getDataFromLocal() {
+function getDataFromLocal(){
 
     return JSON.parse(localStorage.getItem("Tasks"));
 }
@@ -110,97 +111,106 @@ let tableBody = document.getElementById("table-body");
 table1.appendChild(tableBody);
 
 
-///////////////// counter to each row of the table 
+// counter to each row of the table 
 let counter = 0;
 function addRowNumer() {
 
     return counter = counter + 1;
 }
 
-let rowsArray = [];
+// old way of calling items to the row///
+
+// let rowsArray = [];
 
 // ============================ this is the constructor for the table rows 
 function TableRow(event) {
-
+      
     let rowTitle1 = event.target.title.value;
     let rowTitle2 = event.target.description.value;
     let rowTitle3 = event.target.priority.value;
+    // debugger
+    let indexNumber = getDataFromLocal().length;
 
-    // creating the new row 
-    let newRow = document.createElement("tr");
-    tableBody.appendChild(newRow);
-
-    let tableHead = document.createElement("th");
-    tableHead.textContent = counter;
-    newRow.appendChild(tableHead);
-
-
-    let td1 = document.createElement("td");
-    td1.textContent = rowTitle1;
-    newRow.appendChild(td1);
-
-    let td2 = document.createElement("td");
-    td2.textContent = rowTitle2;
-    newRow.appendChild(td2);
-
-    let td3 = document.createElement("td");
-    td3.textContent = rowTitle3;
-    newRow.appendChild(td3);
-
-    let td4 = document.createElement("td");
-    newRow.appendChild(td4);
-
-    let select1 = document.createElement("select");
-    td4.setAttribute("id", "mySelect");
-    td4.appendChild(select1);
-    select1.style.borderRadius = "20";
-
-    var option0 = document.createElement("option");
-    var t0 = document.createTextNode("Select status");
-    option0.setAttribute("id", "main-select");
-    option0.appendChild(t0);
-    select1.appendChild(option0);
-
-
-    var option1 = document.createElement("option");
-    option1.setAttribute("value", "Completed");
-    var t1 = document.createTextNode("Completed");
-    option1.appendChild(t1);
-    select1.appendChild(option1);
-
-
-    var option2 = document.createElement("option");
-    option2.setAttribute("value", "Incomplete");
-    var t2 = document.createTextNode("Incomplete");
-    option2.appendChild(t2)
-    select1.appendChild(option2);
-
-
-    let button = document.createElement("button");
-    let td5 = document.createElement("td");
-    td5.appendChild(button);
-    button.textContent = "Delete";
-    button.className = "btn btn-danger";
-    button.type = "submit";
-
-    newRow.appendChild(td5);
-
-
-    rowsArray.push(td1);
-
-    saveRowToLocal();
+    createRow(rowTitle1, rowTitle2, rowTitle3, indexNumber);
 
 }
 
-function saveRowToLocal() {
+function genrateRowData(){
 
-    let rowString = JSON.stringify(rowsArray);
+    let tasks = getDataFromLocal().filter((task)=>task.userID==JSON.parse(localStorage.getItem("currentUser")).userID)
 
-    log(rowString);
+    if(tasks){
+        tasks.forEach((task, index) => {
+            
+            createRow(task.title, task.description, task.priority,index+1);
 
-    localStorage.setItem("TableRows", rowString);
+        });
+    }
 }
 
+// create the row
+function createRow(rowTitle1, rowTitle2, rowTitle3, number){
+// creating the new row 
+let newRow = document.createElement("tr");
+tableBody.appendChild(newRow);
+
+let tableHead = document.createElement("th");
+tableHead.textContent = number;
+newRow.appendChild(tableHead);
+
+
+let td1 = document.createElement("td");
+td1.textContent = rowTitle1;
+newRow.appendChild(td1);
+
+let td2 = document.createElement("td");
+td2.textContent = rowTitle2;
+newRow.appendChild(td2);
+
+let td3 = document.createElement("td");
+td3.textContent = rowTitle3;
+newRow.appendChild(td3);
+
+let td4 = document.createElement("td");
+newRow.appendChild(td4);
+
+let select1 = document.createElement("select");
+td4.setAttribute("id", "mySelect");
+td4.appendChild(select1);
+select1.style.borderRadius = "20";
+
+var option0 = document.createElement("option");
+var t0 = document.createTextNode("Select status");
+option0.setAttribute("id", "main-select");
+option0.appendChild(t0);
+select1.appendChild(option0);
+
+
+var option1 = document.createElement("option");
+option1.setAttribute("value", "Completed");
+var t1 = document.createTextNode("Completed");
+option1.appendChild(t1);
+select1.appendChild(option1);
+
+
+var option2 = document.createElement("option");
+option2.setAttribute("value", "Incomplete");
+var t2 = document.createTextNode("Incomplete");
+option2.appendChild(t2)
+select1.appendChild(option2);
+
+
+let button = document.createElement("button");
+let td5 = document.createElement("td");
+td5.appendChild(button);
+button.textContent = "Delete";
+button.className = "btn btn-danger";
+button.type = "submit";
+
+newRow.appendChild(td5);
+}
+
+genrateRowData();
 
 let logout = document.getElementById("logout");
 logout.addEventListener('click', (event) => {
@@ -208,9 +218,6 @@ logout.addEventListener('click', (event) => {
     if (logout) { location.href = 'index.html' }
     else { location.href = 'tasks.html' }
 })
-
-
-
 
 
 

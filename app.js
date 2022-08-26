@@ -1,9 +1,13 @@
-function User(first_name, last_name, email, password) {
+function User(first_name, last_name, email, password,userID) {
+    this.userID=userID;
     this.first_name = first_name;
     this.last_name = last_name;
     this.email = email;
     this.password = password;
 }
+
+
+
 
 const form = document.getElementById("form");
 
@@ -29,8 +33,13 @@ form.addEventListener('submit', function (e) {
     console.log(isExist)
 
     //add new user
-    let newUser = new User(fname, lname, email, password);
+    let userID=users.sort()[users.length-1]?.userID+1 || 1;
+    let newUser = new User(fname, lname, email, password,userID);
     users.push(newUser);
+    
+    
+
+
     localStorage.removeItem("users");
     localStorage.setItem("users", JSON.stringify(users));
 
