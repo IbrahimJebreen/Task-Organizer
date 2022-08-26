@@ -229,3 +229,7 @@ th{
 
     padding:;
 } */
+select{
+    border-radius: 10px;
+    height: 39px;
+}

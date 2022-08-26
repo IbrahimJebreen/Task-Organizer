@@ -36,7 +36,8 @@ form.addEventListener("submit", TaskCreator);
 
 // ========================== This is the task creator function and save to local 
 function TaskCreator(event) {
-    debugger
+
+    // debugger
 
     event.preventDefault();
 
@@ -52,11 +53,13 @@ function TaskCreator(event) {
 
     saveToLocal();
 
+    addRowNumer();
+
     TableRow(event);
 
     form.reset(' ');
 
-    /////////// TaskCard() creator for tasks card ///////
+    /////////// TasksCard() creator for tasks card ///////
 
 }
 
@@ -107,6 +110,15 @@ let tableBody = document.getElementById("table-body");
 table1.appendChild(tableBody);
 
 
+///////////////// counter to each row of the table 
+let counter = 0;
+function addRowNumer() {
+
+    return counter = counter + 1;
+}
+
+let rowsArray = [];
+
 // ============================ this is the constructor for the table rows 
 function TableRow(event) {
 
@@ -119,8 +131,9 @@ function TableRow(event) {
     tableBody.appendChild(newRow);
 
     let tableHead = document.createElement("th");
-    tableHead.textContent = 4;
+    tableHead.textContent = counter;
     newRow.appendChild(tableHead);
+
 
     let td1 = document.createElement("td");
     td1.textContent = rowTitle1;
@@ -140,9 +153,11 @@ function TableRow(event) {
     let select1 = document.createElement("select");
     td4.setAttribute("id", "mySelect");
     td4.appendChild(select1);
+    select1.style.borderRadius = "20";
 
-    var option0= document.createElement("option");
+    var option0 = document.createElement("option");
     var t0 = document.createTextNode("Select status");
+    option0.setAttribute("id", "main-select");
     option0.appendChild(t0);
     select1.appendChild(option0);
 
@@ -169,7 +184,33 @@ function TableRow(event) {
     button.type = "submit";
 
     newRow.appendChild(td5);
+
+
+    rowsArray.push(td1);
+
+    saveRowToLocal();
+
 }
+
+function saveRowToLocal() {
+
+    let rowString = JSON.stringify(rowsArray);
+
+    log(rowString);
+
+    localStorage.setItem("TableRows", rowString);
+}
+
+
+let logout = document.getElementById("logout");
+logout.addEventListener('click', (event) => {
+    event.preventDefault(); let logout = confirm("Are you sure?");
+    if (logout) { location.href = 'index.html' }
+    else { location.href = 'tasks.html' }
+})
+
+
+
 
 
 
