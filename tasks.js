@@ -1,4 +1,3 @@
-
 //  ======================== Don't delete this please 4 -7 =========================
 
 // if(!localStorage.getItem('currentUser')){
@@ -22,11 +21,13 @@ if (getDataFromLocal()) {
 
 
 // ===================This constructor is for the login and signup form
-function userTasks(title, description, priority) {
-
+function userTasks(title, description, priority,userID) {
     this.title = title
     this.description = description
     this.priority = priority
+
+    this.userID=userID
+
 } 
 
 // ========================= This is the event listener 
@@ -44,8 +45,10 @@ function TaskCreator(event) {
     let taskTitle = event.target.title.value;
     let taskDescription = event.target.description.value;
     let taskPriority = event.target.priority.value;
+    let userID=JSON.parse(localStorage.getItem("currentUser")).userID;
 
-    let newTask = new userTasks(taskTitle, taskDescription, taskPriority);
+
+    let newTask = new userTasks(taskTitle, taskDescription, taskPriority,userID);
 
     allTasks.push(newTask);
 
@@ -136,7 +139,11 @@ function TableRow(event) {
 
 function genrateRowData(){
 
-    let tasks = getDataFromLocal();
+
+
+
+    let tasks = getDataFromLocal().filter((task)=>task.userID==JSON.parse(localStorage.getItem("currentUser")).userID)
+
 
     if(tasks){
         tasks.forEach((task, index) => {
@@ -213,13 +220,10 @@ genrateRowData();
 
 let logout = document.getElementById("logout");
 logout.addEventListener('click', (event) => {
-    event.preventDefault(); let logout = confirm("Are you sure?");
+     let logout = confirm("Are you sure?");
     if (logout) { location.href = 'index.html' }
     else { location.href = 'tasks.html' }
 })
-
-
-
 
 
 
