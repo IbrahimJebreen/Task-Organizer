@@ -1,6 +1,6 @@
 function User(first_name, last_name, email, password) {
     this.first_name = first_name;
-    this.last_name = last_name;
+    this.   last_name = last_name;
     this.email = email;
     this.password = password;
 }
@@ -19,17 +19,23 @@ form.addEventListener('submit', function (e) {
 
     //check if email is exist
     let users = JSON.parse(localStorage.getItem("users")) || [];
- 
+
     let isExist = users.find((user) => user.email === email);
     if (isExist) {
         return alert('The email is used!');
     }
-console.log(isExist)
+
+
+    console.log(isExist)
+
     //add new user
     let newUser = new User(fname, lname, email, password);
     users.push(newUser);
     localStorage.removeItem("users");
     localStorage.setItem("users", JSON.stringify(users));
+    alert("wlecome"+" "+newUser.first_name)
+location.href="tasks.html";
+
 
     //clear register form
     document.getElementById("fname").value = '';
@@ -37,6 +43,8 @@ console.log(isExist)
     document.getElementById("email").value = '';
     document.getElementById("password").value = '';
 })
+
+
 
 //login
 const loginForm = document.getElementById("Login_form");
@@ -68,6 +76,7 @@ let body = document.querySelector('body');
 body.style.backgroundColor = currentTheme.backgroundColor || 'white';
 body.style.color = currentTheme.color || 'black';
 
+
 let Signup=document.getElementById("form");
 Signup.style.backgroundColor = currentTheme.backgroundColor || 'white';
 Signup.style.color = currentTheme.color || 'black';
@@ -81,6 +90,7 @@ containers1.style.backgroundColor = currentTheme.backgroundColor || 'white';
 Loginin.style.color = currentTheme.color || 'black';
 
 changeThemeBtn.textContent = currentTheme.btn || '🌚';
+
 changeThemeBtn.addEventListener("click", (e) => {
     e.preventDefault()
 
@@ -88,6 +98,7 @@ changeThemeBtn.addEventListener("click", (e) => {
     body.style.backgroundColor = body.style.backgroundColor != 'black' ? 'black' : 'white';
     body.style.color = body.style.color != 'white' ? 'white' : 'black';
     changeThemeBtn.textContent = changeThemeBtn.textContent != '🌞' ? '🌞' : '🌚';
+
     
     let Signup=document.getElementById("form");
     Signup.style.backgroundColor = Signup.style.backgroundColor != 'black' ? 'black' : 'white';
@@ -119,13 +130,11 @@ changeThemeBtn.addEventListener("click", (e) => {
         'cbackgroundColor': containers1.style.backgroundColor,
         'ccolor': containers1.style.color,
         'cbtn': changeThemeBtn.textContent
-
+    
 
     }
     localStorage.setItem('theme', JSON.stringify(theme));
 })
-
-
 
 
 const signUpButton = document.getElementById('signUp');
@@ -139,3 +148,7 @@ signUpButton.addEventListener('click', () => {
 signInButton.addEventListener('click', () => {
 	containers.classList.remove("right-panel-active");
 });
+
+
+
+
