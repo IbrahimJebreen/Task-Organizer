@@ -1,9 +1,9 @@
 //  ======================== Don't delete this please 4 -7 =========================
 
-if(!localStorage.getItem('currentUser')){
-    alert('Please Login First');
-    location.href = 'index.html'
-}
+// if(!localStorage.getItem('currentUser')){
+//     alert('Please Login First');
+//     location.href = 'index.html'
+// }
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
 document.querySelector('#currentUserName').textContent = currentUser.first_name + ' ' +currentUser.last_name;
@@ -296,52 +296,52 @@ document.querySelector('#changePriority').addEventListener('change', (e) => {
 
 
 
-const changeThemeBtn = document.querySelector('#changeTheme');
-const currentTheme = JSON.parse(localStorage.getItem('theme')) || {};
-let body = document.querySelector('body');
-body.style.backgroundColor = currentTheme.backgroundColor || 'white';
-body.style.color = currentTheme.color || 'black';
+// const changeThemeBtn = document.querySelector('#changeTheme');
+// const currentTheme = JSON.parse(localStorage.getItem('theme')) || {};
+// let body = document.querySelector('body');
+// body.style.backgroundColor = currentTheme.backgroundColor || 'white';
+// body.style.color = currentTheme.color || 'black';
 
-body.classList.add('bg-light','text-light')
-body.classList.remove('bg-light')
+// body.classList.add('bg-light','text-light')
+// body.classList.remove('bg-light')
 
-let newtask=document.getElementById("newtask");
-newtask.style.backgroundColor = currentTheme.backgroundColor || 'white';
-newtask.style.color = currentTheme.color || 'black';
+// let newtask=document.getElementById("newtask");
+// newtask.style.backgroundColor = currentTheme.backgroundColor || 'white';
+// newtask.style.color = currentTheme.color || 'black';
 
-let tasksTable=document.getElementById("tasks-table");
-tasksTable.classList.add('table-light')
-
-
-if (body.classList.contains('bg-light')) {
-    body.classList.add('bg-light', 'text-light')
-    tasksTable.classList.add('table-light')
-} else {
-    body.classList.add('bg-dark', 'text-dark')
-    tasksTable.classList.add('table-dark')
-}
+// let tasksTable=document.getElementById("tasks-table");
+// tasksTable.classList.add('table-light')
 
 
+// if (body.classList.contains('bg-light')) {
+//     body.classList.add('bg-light', 'text-light')
+//     tasksTable.classList.add('table-light')
+// } else {
+//     body.classList.add('bg-dark', 'text-dark')
+//     tasksTable.classList.add('table-dark')
+// }
 
-changeThemeBtn.textContent = currentTheme.btn || '🌚';
 
-changeThemeBtn.addEventListener("click", (e) => {
-    e.preventDefault()
 
-    let body = document.querySelector('body');
-    body.style.backgroundColor = body.style.backgroundColor != 'black' ? 'black' : 'white';
-    body.style.color = body.style.color != 'white' ? 'white' : 'black';
-    changeThemeBtn.textContent = changeThemeBtn.textContent != '🌞' ? '🌞' : '🌚';
+// changeThemeBtn.textContent = currentTheme.btn || '🌚';
 
-    let newtask = document.getElementById("newtask");
-    newtask.style.backgroundColor = currentTheme.backgroundColor || 'white';
-    newtask.style.color = currentTheme.color || 'black';
+// changeThemeBtn.addEventListener("click", (e) => {
+//     e.preventDefault()
 
-    const theme = {
-        'backgroundColor': body.style.backgroundColor,
-        'color': body.style.color,
-        'btn': changeThemeBtn.textContent
-    }
+//     let body = document.querySelector('body');
+//     body.style.backgroundColor = body.style.backgroundColor != 'black' ? 'black' : 'white';
+//     body.style.color = body.style.color != 'white' ? 'white' : 'black';
+//     changeThemeBtn.textContent = changeThemeBtn.textContent != '🌞' ? '🌞' : '🌚';
 
-    localStorage.setItem('theme', JSON.stringify(theme));
-})
+//     let newtask = document.getElementById("newtask");
+//     newtask.style.backgroundColor = currentTheme.backgroundColor || 'white';
+//     newtask.style.color = currentTheme.color || 'black';
+
+//     const theme = {
+//         'backgroundColor': body.style.backgroundColor,
+//         'color': body.style.color,
+//         'btn': changeThemeBtn.textContent
+//     }
+
+//     localStorage.setItem('theme', JSON.stringify(theme));
+// })
