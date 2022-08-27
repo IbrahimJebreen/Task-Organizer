@@ -11,104 +11,83 @@
 		integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- CSS only -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+	
 </head>
 
 <body>
 	<header>
 		<button id="changeTheme">🌚</button>
-
 	</header>
 	<main>
 
-		<section class="Home">
-			<div class="px-4 py-5 my-5 text-center " style="color:white">
-				<img class="d-block mx-auto mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72"
-					height="57">
-				<h1 id="heromain" class="display-5 fw-bold">Centered hero</h1>
-				<div class="col-lg-6 mx-auto">
-					<p id="herotext" class="lead mb-4">Quickly design and customize responsive mobile-first sites with
-						Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and
-						mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
-					</p>
-					<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-
-						<button id="btnog" type="button" class="btn btn-secondary btn-lg px-4">Sign in/up</button>
+		<div style="width: 100vw; height: 100vh;" data-vide-bg="./video/wallpaper.mp4"
+			data-vide-options="loop: true, muted: true, position: 0% 0%">
+			<section class="Form">
+				
+				<br>
+				<div class="containers " style="top: 50px;" id="containers">
+					<div class="form-containers sign-up-containers">
+						<form id="form">
+							<h1>Create Account</h1>
+							<div class="social-containers">
+								<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+								<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+								<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+							</div>
+							<span>or use your email for registration</span>
+							<input type="text" placeholder="FName" id="fname" />
+							<input type="text" placeholder="LName" id="lname" class="mt-2" />
+							<input type="email" placeholder="Email" id="email" class="mt-2" />
+							<input type="password" placeholder="Password" id="password" class="mt-2" />
+							<button id="btn">Sign Up</button>
+						</form>
 					</div>
-				</div>
-			</div>
+					<div class="form-containers sign-in-containers">
+						<form id="Login_form">
+							<h1>Sign in</h1>
+							<div class="social-containers">
+								<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+								<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+								<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+							</div>
+							<span>or use your account</span>
+							<input type="email" placeholder="Email" id="login_form" required>
 
-		</section>
-
-
-		<section class="Form">
-			<h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
-			<br>
-			<div class="containers" id="containers">
-				<div class="form-containers sign-up-containers">
-					<form id="form">
-						<h1>Create Account</h1>
-						<div class="social-containers">
-							<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-							<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-							<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-						</div>
-						<span>or use your email for registration</span>
-						<input type="text" placeholder="FName" id="fname" />
-						<input type="text" placeholder="LName" id="lname" class="mt-2" />
-						<input type="email" placeholder="Email" id="email" class="mt-2" />
-						<input type="password" placeholder="Password" id="password" class="mt-2" />
-						<button id="btn">Sign Up</button>
-					</form>
-				</div>
-				<div class="form-containers sign-in-containers">
-					<form id="Login_form">
-						<h1>Sign in</h1>
-						<div class="social-containers">
-							<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-							<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-							<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-						</div>
-						<span>or use your account</span>
-						<input type="email" placeholder="Email" id="login_form" required>
-
-						<input type="password" placeholder="Password" id="login_password" class="mt-3" required>
-						<a href="#" id="forget">Forgot your password?</a>
-						<button>Sign In</button>
-					</form>
-				</div>
-				<div class="overlay-containers">
-					<div class="overlay">
-						<div class="overlay-panel overlay-left">
-							<h1>Welcome Back!</h1>
-							<p>To keep connected with us please login with your personal info</p>
-							<button class="ghost" id="signIn">Sign In</button>
-						</div>
-						<div class="overlay-panel overlay-right">
-							<h1>Hello, Friend!</h1>
-							<p>Enter your personal details and start journey with us</p>
-							<button class="ghost" id="signUp">Sign Up</button>
+							<input type="password" placeholder="Password" id="login_password" class="mt-3" required>
+							<a href="#" id="forget">Forgot your password?</a>
+							<button>Sign In</button>
+						</form>
+					</div>
+					<div class="overlay-containers">
+						<div class="overlay">
+							<div class="overlay-panel overlay-left">
+								<h1>Welcome Back!</h1>
+								<p>To keep connected with us please login with your personal info</p>
+								<button class="ghost" id="signIn">Sign In</button>
+							</div>
+							<div class="overlay-panel overlay-right">
+								<h1>Hello, Friend!</h1>
+								<p>Enter your personal details and start journey with us</p>
+								<button class="ghost" id="signUp">Sign Up</button>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
 
 
 
 
-		</section>
+			</section>
 
+		</div>
 
 	</main>
 	<footer>
 	</footer>
 	<!-- JavaScript Bundle with Popper -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-		crossorigin="anonymous"></script>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vide/0.5.1/jquery.vide.min.js" integrity="sha512-xbl0smDcemxvxGBO15P8UbrrP1TWMfT2VQq0uggureCJQGr7umzx72azYCQLospxRd9RvMqRGJcKjrmbJ5cWQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="app.js"></script>
 </body>
 
