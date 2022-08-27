@@ -1,8 +1,8 @@
 # Task-Organizer
 
-[Live URL:]([https://github.com/user/repo/blob/branch/other_file.md](https://ibrahimjebreen.github.io/Task-Organizer/))
+[Live URL:](https://ibrahimjebreen.github.io/Task-Organizer/)
 
-wireframe and mockups PDF:
+
 [wireframe and mockups PDF:](https://shorturl.at/aLTVY)
 
 
