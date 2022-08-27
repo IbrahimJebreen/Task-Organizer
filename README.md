@@ -1,8 +1,10 @@
 # Task-Organizer
-Live URL:
-https://ibrahimjebreen.github.io/Task-Organizer/
+
+[Live URL:]([https://github.com/user/repo/blob/branch/other_file.md](https://ibrahimjebreen.github.io/Task-Organizer/))
+
 wireframe and mockups PDF:
-shorturl.at/aLTVY
+[wireframe and mockups PDF:](https://shorturl.at/aLTVY)
+
 
 You are a developer in “XYZ” company, as a part of your responsibilities to enhance your work environment. your manager asks you to develop a web application to organize daily tasks for the employees to manage their time and work efficiently.
 
