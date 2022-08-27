@@ -34,30 +34,18 @@
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+
+                    <div style="color: white; text-align:center;">
+                        <h3 id="currentUserName"></h3>
+                    </div>
+
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto flex-lg-column text-lg-center" role="tablist">
                             <li class="nav-item ">
-                                <a class="nav-link active" aria-current="page" href="#Dashboard">Dashboard</a>
+                                <a class="nav-link active" aria-current="page" href="./tasks.html">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#Add-Task">Add Task</a>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Task priority
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Critical</a></li>
-                                    <li><a class="dropdown-item" href="#">Normal</a></li>
-                                    <li><a class="dropdown-item" href="#">Low priority</a></li>
-
-                                </ul>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="#calender">Tasks Calender</a>
+                                <a class="nav-link" href="./AddNewTask.html">Add Task</a>
                             </li>
 
                             <li class="nav-item">
@@ -65,6 +53,7 @@
                             </li>
                         </ul>
                     </div>
+                  
                 </div>
             </nav>
         </div>
@@ -73,18 +62,21 @@
     <!-- ========================== End Header Area============================== -->
 
     <!-- ========================== Start add new task ============================== -->
+    
 
     <div id="newtask" class="section d-flex justify-content-center">
+        
         <div class="section-center ">
-            <div class="container">
+            <div class="container" style="display:none;">
                 <div class="row ">
                     <div class="newtask-form">
+
                         <form id="tasks-form">
                             <div class="row" style="display:block;">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <span class="form-label" style="font-size: larger;">Task title </span>
-                                        <input class="form-control" name="title" type="text"
+                                        <input class="form-control" name="title" type="text" required
                                             placeholder="add task title">
                                     </div>
                                 </div>
@@ -92,7 +84,7 @@
                                     <div class="form-group">
                                         <span class="form-label" style="font-size: larger;">Task description</span>
                                         <textarea name="description" class="form-control" rows="3"
-                                            placeholder="write a description"></textarea>
+                                            placeholder="write a description" required></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -101,15 +93,15 @@
                                 <div class="form-checkbox">
                                     <!-- <h4 style="color: white;">Choose taks priority</h4> -->
                                     <label for="Critical">
-                                        <input type="radio" id="Critical" value="Critical" name="priority">
+                                        <input type="radio" id="Critical" value="Critical" name="priority" required>
                                         <span></span>Critical
                                     </label>
                                     <label for="Normal">
-                                        <input type="radio" id="Normal" value="Normal" name="priority">
+                                        <input type="radio" id="Normal" value="Normal" name="priority" required>
                                         <span></span>Normal
                                     </label>
                                     <label for="low-priority">
-                                        <input type="radio" id="low-priority" value="Low-priority" name="priority">
+                                        <input type="radio" id="low-priority" value="Low-priority" name="priority" required>
                                         <span></span>Low priority
                                     </label>
                                 </div>
@@ -123,25 +115,37 @@
                                 </div>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!--=================== End add new task ================-->
 
     <!-- ===================== Start Section for the saved tasks         =========================== -->
 
     <section class="vh-100" id="div6">
-        <div class="container py-5 h-100" id="div5">
-            <div class="row d-flex justify-content-center align-items-center h-100" id="div4">
+        <div class="container py-5 " id="div5">
+            <div class="row d-flex justify-content-center align-items-center h-100" id="div4" style="margin-left:240px ;">
                 <div class="col col-lg-9 col-xl-7" id="div3">
                     <div class="card rounded-3" id="backg">
                         <div class="card-body p-4" id="table-section">
 
                             <h4 class="text-center my-3 pb-3">Tasks list</h4>
 
-                            <table id="tasks-table" class="table mb-4" style="color:white ;">
+                            <div class="mb-4" style="text-align:end;">
+                                <button id="clearCompleted" class="btn btn-danger me-3">Clear Completed</button>
+                                <select id="changePriority">
+                                    <option value="All" selected>All</option>
+                                    <option value="Normal">Normal</option>
+                                    <option value="Critical">Critical</option>
+                                    <option value="Low-priority">Low priority</option>
+                                </select>
+                            </div>
+
+                            <table id="tasks-table" class="table mb-4 ">
                                 <thead>
                                     <tr>
                                         <th scope="col">No.</th>

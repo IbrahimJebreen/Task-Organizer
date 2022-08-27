@@ -233,3 +233,10 @@ select{
     border-radius: 10px;
     height: 39px;
 }
+
+#changeTheme {
+	position: relative;
+	z-index:1 ;
+    background-color: inherit;
+    border: none;
+}
